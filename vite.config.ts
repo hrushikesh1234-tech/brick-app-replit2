@@ -8,6 +8,10 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 5000,
+     allowedHosts: [
+      "localhost",
+      "*.replit.dev", // allow all Replit preview domains
+    ],
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
